@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-void testSsize(void);
-void testMsize(void);
-void testLsize(void);
+void testsize(void);
+
 
 char size(int cms) {
     char sizeName = '\0';
@@ -17,26 +16,17 @@ char size(int cms) {
     return sizeName;
 }
 
-void testSsize(){
+void testsize(){
     assert(size(37) == 'S');
     assert(size(38) == 'S');
-}
-
-void testMsize(){
     assert(size(39) == 'M');
     assert(size(40) == 'M');
     assert(size(42) == 'M');
+    assert(size(43) == 'L');
 }
-
-void testLsize(){
-     assert(size(43) == 'L');
-}
-
 
 int main() {
-    testSsize();
-    testMsize();
-    testLsize();
+    testsize();
     printf("All is well (maybe!)\n");
     return 0;
 }
