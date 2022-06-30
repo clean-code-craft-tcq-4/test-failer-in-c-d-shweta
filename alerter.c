@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int alertFailureCount = 0;
-void testfail(void);
+void test(void);
     
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
@@ -28,7 +28,6 @@ void alertInCelcius(float farenheit) {
 }
 void testfail(){
     alertInCelcius(400.5);
-    assert(alertFailureCount == 1);
     alertInCelcius(303.6);
     assert(alertFailureCount == 0);
 }
