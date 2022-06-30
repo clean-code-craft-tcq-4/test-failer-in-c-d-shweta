@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
+void testColor(void);
+
 int printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -13,9 +15,16 @@ int printColorMap() {
     return i * j;
 }
 
-int main() {
+void testColor()
+{
     int result = printColorMap();
+    assert(result == 24);
     assert(result == 25);
+    assert(result == 26);
+}
+
+int main() {
+    testColor();
     printf("All is well (maybe!)\n");
     return 0;
 }
